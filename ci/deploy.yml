@@ -11,3 +11,10 @@ inputs:
 
 run:
   path: resource-git-smoketests-sso-resource/ci/deploy.sh
+
+params:
+  api:
+  organization:
+  space:
+  username:
+  password:
