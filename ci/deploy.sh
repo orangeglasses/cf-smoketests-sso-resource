@@ -4,6 +4,11 @@
 export CF_TRACE=true
 export CF_TRACE=./trace.log
 
-cf login -a $api -u $username -p $password -o $organization -s $space &&\
-cd ./resource-git-smoketests-sso-resource/ &&\
+if $insecure; then
+cf login -a $api -u $username -p $password -o $organization -s $space --skip-ssl-validation 
+else
+cf login -a $api -u $username -p $password -o $organization -s $space
+fi
+
+cd ./resource-git-smoketests-sso-resource/ 
 cf push -f $manifest

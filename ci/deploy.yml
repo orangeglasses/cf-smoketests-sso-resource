@@ -18,3 +18,5 @@ params:
   space:
   username:
   password:
+  manifest:
+  insecure:
